@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Additional Concepts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.0-rc.5/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+</head>
+
+<body>
+    <div id="app2">
+        <custom-input :label="inputLabel" :type="inputType" v-model="customInputValue" @input-changed="handleInputChange">
+            <template #prefix>Prefix: </template>
+        </custom-input>
+
+        <button @click="confirmInput">Confirm Input</button>
+        <p>Confirmed Input Value: {{ confirmedInput }}</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Search</a>
+        <a href="testing.html">Add / Type Something</a>
+    </div>
+
+    <script src="java1.js"></script>
+</body>
+
+</html>

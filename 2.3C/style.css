@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+input,
+button {
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.navbar {
+    background-color: blue;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+ul {
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Sample Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.0-rc.5/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Search</a>
+        <a href="testing.html">Add / Type Something</a>
+    </div>
+
+    <div id="app">
+        <p v-html="description"></p>
+        <ul v-bind:style="{ backgroundColor: backgroundColor }">
+
+        </ul>
+        <input v-model="searchQuery" placeholder="Search...">
+        <button @click="search">Search</button>
+
+        <input v-model.trim="newMessage" placeholder="Type a message...">
+        <button @click="addMessage">Send</button>
+
+        <ul>
+            <li v-for="(message, index) in filteredMessages" :key="index" :class="{ checked: message.checked }">
+                <input type="checkbox" v-model="message.checked"> {{ message.text }}
+                <button @click="deleteMessage(index)">Delete</button>
+
+            </li>
+        </ul>
+
+        <p>Checked messages count: {{ checkedMessagesCount }}</p>
+
+        <p v-for="n in 5">Number {{ n }}</p>
+
+        <template v-for="n in 3">
+            <p>Item {{ n }}</p>
+            <hr>
+        </template>
+
+        <simple-item v-for="n in 3" :key="n" :item-number="n"></simple-item>
+
+        <label>Enter a number (lazy mode): </label>
+        <input v-model.lazy.number="lazyNumber" type="text">
+        <p>You entered: {{ lazyNumber }}</p>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+
+</html>
